@@ -45,13 +45,20 @@ int is_perfect_recursive(const binary_tree_t *tree, size_t depth, size_t *level)
 	if (tree == NULL)
 		return (1);
 
-	/* If both left and right children are NULL, check if this is the deepest level */
+	/* If both left and right children are NULL, check
+	if this is the deepest level */
 	if (tree->left == NULL && tree->right == NULL)
 	{
-		/* If this is the first leaf node encountered, record its depth as the level */
+		/**
+		 *  If this is the first leaf node encountered,
+		 * record its depth as the level
+		 */
 		if (*level == 0)
 			*level = depth;
-		/*  If subsequent leaf nodes have different depths, the tree is not perfect */
+		/**
+		 *   If subsequent leaf nodes have different depths,
+		 *  the tree is not perfect
+		 */
 		else if (depth != *level)
 			return (0);
 		return (1);
