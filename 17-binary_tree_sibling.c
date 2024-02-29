@@ -9,18 +9,18 @@
  */
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
-    /* Check if the node or its parent is NULL */
-    if (node == NULL || node->parent == NULL)
-        return (NULL);
+	/* Check if the node or its parent is NULL */
+	if (node == NULL || node->parent == NULL)
+		return (NULL);
 
-    /* Check if the node is the left child of its parent */
-    if (node->parent->left == node)
-        return (node->parent->right);
+	/* Check if the node is the left child of its parent */
+	if (node->parent->left == node)
+		return (node->parent->right);
 
-    /* Check if the node is the right child of its parent */
-    if (node->parent->right == node)
-        return (node->parent->left);
+	/* Check if the node is the right child of its parent */
+	if (node->parent->right == node)
+		return (node->parent->left);
 
-    /* Node is not a child of its parent, return NULL */
-    return (NULL);
+	/* Node is not a child of its parent, return NULL */
+	return (NULL);
 }

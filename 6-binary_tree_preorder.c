@@ -16,16 +16,16 @@
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
-    /* Check if the tree is empty */
-    if (tree == NULL)
-        return;
+	/* Check if the tree is empty */
+	if (tree == NULL)
+		return;
 
-    /* Call the function for the current node */
-    func(tree->n);
+	/* Call the function for the current node */
+	func(tree->n);
 
-    /* Traverse the left subtree */
-    binary_tree_preorder(tree->left, func);
+	/* Traverse the left subtree */
+	binary_tree_preorder(tree->left, func);
 
-    /* Traverse the right subtree */
-    binary_tree_preorder(tree->right, func);
+	/* Traverse the right subtree */
+	binary_tree_preorder(tree->right, func);
 }
