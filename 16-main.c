@@ -12,26 +12,46 @@ int main(void)
     binary_tree_t *root;
     int perfect;
 
-    root = binary_tree_node(NULL, 98);
-    root->left = binary_tree_node(root, 12);
-    root->right = binary_tree_node(root, 402);
-    binary_tree_insert_right(root->left, 54);
-    binary_tree_insert_right(root, 128);
-    root->left->left = binary_tree_node(root->left, 10);
-    root->right->left = binary_tree_node(root->right, 10);
-
+    // Test Case 1: Single node tree
+    root = binary_tree_node(NULL, 10);
     binary_tree_print(root);
     perfect = binary_tree_is_perfect(root);
     printf("Perfect: %d\n\n", perfect);
+    binary_tree_delete(root);
 
-    root->right->right->left = binary_tree_node(root->right->right, 10);
+    // Test Case 2: Perfect binary tree with height 2
+    root = binary_tree_node(NULL, 10);
+    root->left = binary_tree_node(root, 20);
+    root->right = binary_tree_node(root, 30);
     binary_tree_print(root);
     perfect = binary_tree_is_perfect(root);
     printf("Perfect: %d\n\n", perfect);
+    binary_tree_delete(root);
 
-    root->right->right->right = binary_tree_node(root->right->right, 10);
+    // Test Case 3: Perfect binary tree with height 3
+    root = binary_tree_node(NULL, 10);
+    root->left = binary_tree_node(root, 20);
+    root->right = binary_tree_node(root, 30);
+    root->left->left = binary_tree_node(root->left, 40);
+    root->left->right = binary_tree_node(root->left, 50);
+    root->right->left = binary_tree_node(root->right, 60);
+    root->right->right = binary_tree_node(root->right, 70);
     binary_tree_print(root);
     perfect = binary_tree_is_perfect(root);
-    printf("Perfect: %d\n", perfect);
+    printf("Perfect: %d\n\n", perfect);
+    binary_tree_delete(root);
+
+    // Test Case 4: Imperfect binary tree with height 3
+    root = binary_tree_node(NULL, 10);
+    root->left = binary_tree_node(root, 20);
+    root->right = binary_tree_node(root, 30);
+    root->left->left = binary_tree_node(root->left, 40);
+    root->left->right = binary_tree_node(root->left, 50);
+    root->right->left = binary_tree_node(root->right, 60);
+    binary_tree_print(root);
+    perfect = binary_tree_is_perfect(root);
+    printf("Perfect: %d\n\n", perfect);
+    binary_tree_delete(root);
+
     return (0);
 }
