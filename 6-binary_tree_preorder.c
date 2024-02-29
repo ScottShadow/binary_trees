@@ -7,7 +7,6 @@
  * Description: Performs pre-order traversal on the binary tree,
  * calling the specified function for each node's value.
  * If tree or func is NULL, does nothing.
- * Return: None
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
